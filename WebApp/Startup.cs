@@ -1,3 +1,4 @@
+using Application.Common;
 using Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -5,6 +6,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApp.Services;
 
 namespace WebApp
 {
@@ -22,6 +24,10 @@ namespace WebApp
         {
             //Moved default dependencies and custom dependency added in infrastructure project 
             services.AddDependencies(Configuration);
+
+            services.AddDatabaseDeveloperPageExceptionFilter();
+
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
