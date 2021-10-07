@@ -1,3 +1,4 @@
+using Application;
 using Application.Common;
 using Infrastructure;
 using Microsoft.AspNetCore.Builder;
@@ -22,7 +23,10 @@ namespace WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //Moved default dependencies and custom dependency added in infrastructure project 
+            //added application dependecnies
+            services.AddApplication();
+
+            //added infrastructure dependecnies 
             services.AddDependencies(Configuration);
 
             services.AddDatabaseDeveloperPageExceptionFilter();
