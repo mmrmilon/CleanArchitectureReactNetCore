@@ -6,6 +6,6 @@ namespace Application.Common
 {
     public interface ICurrentUserService
     {
-        long UserId { get; }
+        string UserId { get; }
     }
 }

@@ -12,9 +12,9 @@ namespace WebApp.Services
     {
         public CurrentUserService(IHttpContextAccessor httpContextAccessor)
         {
-            UserId = Convert.ToInt64(httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier));
+            UserId = httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
         }
 
-        public long UserId { get; }
+        public string UserId { get; }
     }
 }
