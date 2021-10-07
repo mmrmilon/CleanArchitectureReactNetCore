@@ -19,7 +19,6 @@
     <Folder Include="Commands\Donors\" />
     <Folder Include="Handlers\Donors\" />
     <Folder Include="Queries\Donors\" />
-    <Folder Include="Queries\BloodGroups\" />
   </ItemGroup>
 
 </Project>
